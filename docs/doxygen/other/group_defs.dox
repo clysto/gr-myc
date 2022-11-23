@@ -1,0 +1,6 @@
+/*!
+ * \defgroup block GNU Radio MYC C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the MYC GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */

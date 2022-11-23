@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/maoyachen/.miniconda3/envs/comm/include",
+                "/home/maoyachen/.miniconda3/envs/comm/include/python3.10",
+                "/home/maoyachen/Code/gr-myc/build/python/myc/bindings"
+            ],
+            "defines": [
+                "SPDLOG_FMT_EXTERNAL"
+            ],
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
