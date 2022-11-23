@@ -11,5 +11,6 @@
 ########################################################################
 install(FILES
     api.h
-    varlen_packet_tagger.h DESTINATION include/gnuradio/myc
+    varlen_packet_tagger.h
+    fm0decoder.h DESTINATION include/gnuradio/myc
 )

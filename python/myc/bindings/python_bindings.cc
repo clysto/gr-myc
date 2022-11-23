@@ -22,6 +22,7 @@ namespace py = pybind11;
 /**************************************/
 // BINDING_FUNCTION_PROTOTYPES(
     void bind_varlen_packet_tagger(py::module& m);
+    void bind_fm0decoder(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -51,5 +52,6 @@ PYBIND11_MODULE(myc_python, m)
     /**************************************/
     // BINDING_FUNCTION_CALLS(
     bind_varlen_packet_tagger(m);
+    bind_fm0decoder(m);
     // ) END BINDING_FUNCTION_CALLS
 }

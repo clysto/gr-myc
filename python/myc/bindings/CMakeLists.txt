@@ -28,7 +28,8 @@ include(GrPybind)
 # Python Bindings
 ########################################################################
 list(APPEND myc_python_files
-    varlen_packet_tagger_python.cc python_bindings.cc)
+    varlen_packet_tagger_python.cc
+    fm0decoder_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(myc
    ../../..

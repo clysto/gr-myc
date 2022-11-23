@@ -1,0 +1,15 @@
+id: myc_fm0decoder
+label: FM0 Decoder
+category: '[Yachen]/Coding'
+templates:
+  imports: from gnuradio import myc
+  make: myc.fm0decoder()
+inputs:
+  - label: in
+    domain: stream
+    dtype: byte
+outputs:
+  - label: out
+    domain: stream
+    dtype: byte
+file_format: 1

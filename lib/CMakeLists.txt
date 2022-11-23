@@ -11,7 +11,8 @@
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
 list(APPEND myc_sources
-    varlen_packet_tagger_impl.cc )
+    varlen_packet_tagger_impl.cc
+    fm0decoder_impl.cc )
 
 set(myc_sources "${myc_sources}" PARENT_SCOPE)
 if(NOT myc_sources)

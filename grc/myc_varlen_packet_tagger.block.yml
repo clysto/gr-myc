@@ -20,7 +20,7 @@ parameters:
   - id: length_field_size
     label: Packet Length Size
     dtype: int
-    default: '12'
+    default: '16'
   - id: mtu
     label: MTU
     dtype: int

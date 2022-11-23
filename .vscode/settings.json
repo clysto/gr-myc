@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "type_traits": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "cstddef": "cpp"
     }
 }

@@ -91,7 +91,7 @@ int varlen_packet_tagger_impl::general_work(int noutput_items,
             return 0;
         }
 
-        packet_len = 8 * 2 * bits2len(in);
+        packet_len = 8 * 2 * bits2len(in) + 32;
 
         if (packet_len > d_mtu) {
             d_debug_logger->warn("Packet length {:d} > mtu {:d}.", packet_len, d_mtu);
@@ -100,7 +100,7 @@ int varlen_packet_tagger_impl::general_work(int noutput_items,
             return 0;
         }
 
-        d_ninput_items_required = d_header_length + packet_len;
+        d_ninput_items_required = (d_header_length * 2) + packet_len;
 
         if (noutput_items < packet_len) {
             set_min_noutput_items(packet_len);
@@ -108,8 +108,9 @@ int varlen_packet_tagger_impl::general_work(int noutput_items,
         }
         set_min_noutput_items(1);
 
-        if (ninput_items[0] >= packet_len + d_header_length) {
-            memcpy(out, &in[d_header_length], packet_len);
+        if (ninput_items[0] >= packet_len + d_header_length * 2) {
+            // TODO: header parse
+            memcpy(out, &in[d_header_length * 2], packet_len);
             add_item_tag(0,
                          nitems_written(0),
                          d_packet_tag,
@@ -120,8 +121,8 @@ int varlen_packet_tagger_impl::general_work(int noutput_items,
             // consuming only the header allows for
             // ... multiple syncs per 'packet',
             // ... in case the sync was incorrectly tagged
-            consume_each(d_header_length);
-            d_ninput_items_required = d_header_length + 1;
+            consume_each(d_header_length * 2);
+            d_ninput_items_required = d_header_length * 2 + 1;
             return packet_len;
         }
 
